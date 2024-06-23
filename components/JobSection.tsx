@@ -1,22 +1,34 @@
-"use client"
+import JoblistingCard from "./JoblistingCard";
 
-import JobCard from "@/components/JobCard";
-
-export default function LatestJobs() {
+export default function JobSection() {
   return (
-    <div>
-      <h2 className="text-4xl font-bold dark:text-black flex justify-center gap-2 pt-20">
-        Latest
-        <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-purple-600">
-          Job
-        </span>{" "}
-        Listings
-      </h2>
-      <div
-        id="jobcard"
-        className=" px-24 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        <JobCard
+    <div className="flex w-full max-h-screen p-10">
+      {/* Left Sidebar */}
+      <div className="w-1/4 bg-custom-bg p-6 rounded-lg ">
+      <h2 className="text-xl font-semibold mb-4">Filter </h2>
+        <div className="mb-4">
+            <label className="text-gray-700">Search by keywords</label>
+          <input
+            type="text"
+            placeholder="Search jobs"
+            className="w-full p-2 rounded-lg"
+          />
+        </div>
+        <div>
+            <label className="text-gray-700">Location</label>
+            <input 
+            type="text"
+            placeholder="Select your location"
+            className="w-full p-2 rounded-lg"
+            />
+        </div>
+      </div>
+
+      {/* Main Content Area */}
+      <div className="w-full bg-white p-4 ">
+        <h2 className="text-2xl font-semibold mb-4">Job Listings</h2>
+        {/* Add your job listings here */}
+        <JoblistingCard
           jobTitle="Frontend Developer"
           company="Google"
           companyLogo="https://img.icons8.com/?size=100&id=17949&format=png&color=000000"
@@ -26,7 +38,7 @@ export default function LatestJobs() {
           jobType="Full-time"
           jobNature="Remote"
         />
-        <JobCard
+        <JoblistingCard
           jobTitle="Applied Scientist Intern"
           company="Amazon"
           companyLogo="https://img.icons8.com/?size=100&id=21295&format=png&color=000000"
@@ -36,7 +48,7 @@ export default function LatestJobs() {
           jobType="Full-time"
           jobNature="Onsite"
         />
-        <JobCard
+        <JoblistingCard
           jobTitle="Software Engineer"
           company="Microsoft"
           companyLogo="https://img.icons8.com/?size=100&id=22989&format=png&color=000000"
@@ -46,7 +58,7 @@ export default function LatestJobs() {
           jobType="Full-time"
           jobNature="Onsite"
         />
-        <JobCard
+        <JoblistingCard
           jobTitle="Flutter Developer"
           company="Meta"
           companyLogo="https://img.icons8.com/?size=100&id=PvvcWRWxRKSR&format=png&color=000000"
@@ -56,7 +68,7 @@ export default function LatestJobs() {
           jobType="Full-time"
           jobNature="Onsite"
         />
-        <JobCard
+        <JoblistingCard
           jobTitle="Machine Learning Intern"
           company="Microsoft"
           companyLogo="https://img.icons8.com/?size=100&id=22989&format=png&color=000000"
@@ -66,7 +78,7 @@ export default function LatestJobs() {
           jobType="Part-time"
           jobNature="Remote"
         />
-        <JobCard
+        <JoblistingCard
           jobTitle="React Developer"
           company="X"
           companyLogo="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=000000"
@@ -76,17 +88,7 @@ export default function LatestJobs() {
           jobType="Full-time"
           jobNature="Onsite"
         />
-      </div>
-      <div className="flex justify-center px-10 py-4">
-        <button
-          type="button"
-          className="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={()=> {
-            window.location.href = "/jobs";
-          }}
-        >
-          Load More Listings
-        </button>
+        {/* Add more job listings as needed */}
       </div>
     </div>
   );

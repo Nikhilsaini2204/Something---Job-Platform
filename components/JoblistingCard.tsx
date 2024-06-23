@@ -1,27 +1,18 @@
-import Image from 'next/image';
+import Image from "next/image";
 interface Props {
-  jobTitle: string;
-  company: string;
-  companyLogo: string;
-  location: string;
-  postedTime: string;
-  salary: string;
-  jobType: string;
-  jobNature: string;
-}
+    jobTitle: string;
+    company: string;
+    companyLogo: string;
+    location: string;
+    postedTime: string;
+    salary: string;
+    jobType: string;
+    jobNature: string;
+  }
 
-export default function JobCard({
-  jobTitle,
-  company,
-  companyLogo,
-  location,
-  postedTime,
-  salary,
-  jobType,
-  jobNature,
-}: Props) {
-  return (
-    <div className="shadow-md bg-clip-border rounded-xl hover:bg-gray-200 p-5 flex flex-col  space-y-4 ">
+export default function JoblistingCard({jobTitle, company,companyLogo,location, postedTime,salary,jobNature,jobType }: Props ){
+    return(
+        <div className="shadow-md bg-clip-border rounded-xl hover:bg-gray-200 p-5 flex flex-col  space-y-4 ">
       <div className="flex items-center space-x-4">
         <Image
         src={companyLogo}
@@ -58,5 +49,5 @@ export default function JobCard({
         
       </div>
     </div>
-  );
+    )
 }
