@@ -8,6 +8,7 @@ interface Props {
   salary: string;
   jobType: string;
   jobNature: string;
+  experience: string;
 }
 
 export default function JobCard({
@@ -19,6 +20,7 @@ export default function JobCard({
   salary,
   jobType,
   jobNature,
+  experience
 }: Props) {
   return (
     <div className="shadow-md bg-clip-border rounded-xl hover:bg-gray-200 p-5 flex flex-col  space-y-4 ">
@@ -46,9 +48,12 @@ export default function JobCard({
         </div>
       </div>
       <div className="flex justify-between text-gray-600">
-        <span className="font-medium">{salary}</span>
+        <span className="font-medium">₹ {salary}</span>
       </div>
       <div className="flex space-x-2">
+        <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">
+          {experience}
+        </span>
         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
           {jobType}
         </span>

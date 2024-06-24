@@ -1,6 +1,43 @@
-import JobCard from "./JobCard";
+"use client"
+import JobCard from "@/components/JobCard";
+import {useEffect} from 'react';
+import {useState} from 'react';
+
+const JobListings = ({data}: any) => {
+  return (
+    <div>
+      {data.map((job: any)=>(
+        <JobCard
+          key={job._id}
+          jobTitle={job.jobTitle}
+          company={job.company}
+          companyLogo={job.companyLogo}
+          location={job.jobLocation}
+          postedTime={job.postedTime}
+          salary={job.salary}
+          jobType={job.jobType}
+          jobNature={job.jobMode}
+          experience={job.experience}
+        />
+      
+      ))}
+    </div>
+  )
+}
 
 export default function JobSection() {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch('/api/post');
+      const data = await response.json();
+      setPosts(data);
+    }
+    fetchPosts();
+  },[]);
+
   return (
     <div className="flex w-full max-h-screen p-10">
       {/* Left Sidebar */}
@@ -80,65 +117,8 @@ export default function JobSection() {
       <div className="w-full bg-white p-4 ">
         <h2 className="text-2xl font-semibold mb-4">Job Listings</h2>
         {/* Add your job listings here */}
-        <JobCard
-          jobTitle="Frontend Developer"
-          company="Google"
-          companyLogo="https://img.icons8.com/?size=100&id=17949&format=png&color=000000"
-          location="Mumbai, India"
-          postedTime="1 day ago"
-          salary="₹ 12,00,000 - ₹ 15,00,000"
-          jobType="Full-time"
-          jobNature="Remote"
-        />
-        <JobCard
-          jobTitle="Applied Scientist Intern"
-          company="Amazon"
-          companyLogo="https://img.icons8.com/?size=100&id=21295&format=png&color=000000"
-          location="Hyderabad, India"
-          postedTime="5 day ago"
-          salary="₹ 1.5 Lakh Stipend"
-          jobType="Full-time"
-          jobNature="Onsite"
-        />
-        <JobCard
-          jobTitle="Software Engineer"
-          company="Microsoft"
-          companyLogo="https://img.icons8.com/?size=100&id=22989&format=png&color=000000"
-          location="Gurgaon, India"
-          postedTime="1 week ago"
-          salary="₹ 10,00,000 - ₹ 15,00,000"
-          jobType="Full-time"
-          jobNature="Onsite"
-        />
-        <JobCard
-          jobTitle="Flutter Developer"
-          company="Meta"
-          companyLogo="https://img.icons8.com/?size=100&id=PvvcWRWxRKSR&format=png&color=000000"
-          location="Mumbai, India"
-          postedTime="1 week ago"
-          salary="₹ 6,00,000 - ₹ 8,00,000"
-          jobType="Full-time"
-          jobNature="Onsite"
-        />
-        <JobCard
-          jobTitle="Machine Learning Intern"
-          company="Microsoft"
-          companyLogo="https://img.icons8.com/?size=100&id=22989&format=png&color=000000"
-          location="Gurgaon, India"
-          postedTime="1 week ago"
-          salary="₹ 1,00,000 - ₹ 1,50,000"
-          jobType="Part-time"
-          jobNature="Remote"
-        />
-        <JobCard
-          jobTitle="React Developer"
-          company="X"
-          companyLogo="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=000000"
-          location="Bengaluru, India"
-          postedTime="2 week ago"
-          salary="₹ 7,00,000 - ₹ 9,50,000"
-          jobType="Full-time"
-          jobNature="Onsite"
+        <JobListings
+        data={posts}
         />
         {/* Add more job listings as needed */}
       </div>
