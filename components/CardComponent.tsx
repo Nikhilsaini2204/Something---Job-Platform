@@ -5,7 +5,7 @@ interface Props{
 export default function CardComponent({title}: Props) {
   return (
     <>
-      <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96 hover:bg-gray-200">
+      <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-full hover:bg-gray-200">
         <div className="p-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
