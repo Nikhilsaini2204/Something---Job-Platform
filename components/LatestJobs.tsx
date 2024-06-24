@@ -9,7 +9,7 @@ const JobListings = ({ data }: any) => {
   return (
     <div
       id="jobcard"
-      className=" px-24 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      className=" px-10 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
     >
       {data.map((job: any) => (
         <JobCard
