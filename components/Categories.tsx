@@ -10,7 +10,7 @@ export default function Categories() {
         </span>{" "}
         Categories
       </h2>
-      <div className="grid grid-cols-3 px-24 gap-2">
+      <div className="px-24 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <CardComponent  title="Fronted Web Developer"/>
         <CardComponent  title="Application Developer"/>
         <CardComponent  title="Ruby Developer"/>
