@@ -1,7 +1,7 @@
 import { connectToDB } from "@/utils/database";
 import Job from "@/models/jobs";
 
-
+export const revalidate = 0;
 
 export const GET = async (req) => {
   try {
