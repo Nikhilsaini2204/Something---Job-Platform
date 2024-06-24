@@ -4,7 +4,6 @@ export default function Categories() {
   return (
     <>
       <h2 className="text-4xl font-bold dark:text-black flex justify-center gap-2 pt-20 ">
-        Popular
         <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-purple-600">
           Job
         </span>{" "}

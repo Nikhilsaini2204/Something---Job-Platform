@@ -13,7 +13,7 @@ function Jobs() {
           </mark>{" "}
           & Apply
         </h1>
-        <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+        <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 px-6">
           Filter roles according to your preferences and apply for the best job
         </p>
 

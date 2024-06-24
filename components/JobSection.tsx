@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 const JobListings = ({data}: any) => {
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
       {data.map((job: any)=>(
         <JobCard
           key={job._id}
@@ -41,7 +41,7 @@ export default function JobSection() {
   return (
     <div className="flex w-full max-h-screen p-10">
       {/* Left Sidebar */}
-      <div className="w-1/4 bg-custom-bg p-6 rounded-lg ">
+      <div className="w-1/4 bg-custom-bg p-6 rounded-lg hidden md:block">
         <h2 className="text-xl font-semibold mb-4">Filter </h2>
         <div className="mb-4">
           <label className="text-gray-700">Search by keywords</label>
