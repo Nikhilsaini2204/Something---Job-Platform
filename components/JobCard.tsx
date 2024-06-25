@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 interface Props {
+  jobId: string;
   jobTitle: string;
   company: string;
   companyLogo: string;
@@ -12,6 +14,7 @@ interface Props {
 }
 
 export default function JobCard({
+  jobId,
   jobTitle,
   company,
   companyLogo,
@@ -23,6 +26,7 @@ export default function JobCard({
   experience
 }: Props) {
   return (
+    <Link key={jobId} href={`/jobs/${jobId}`}>
     <div className="shadow-md bg-clip-border rounded-xl hover:bg-gray-200 p-5 flex flex-col  space-y-4 ">
       <div className="flex items-center space-x-4">
         <Image
@@ -63,5 +67,6 @@ export default function JobCard({
         
       </div>
     </div>
+    </Link>
   );
 }
