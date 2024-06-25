@@ -9,7 +9,6 @@ const JobListings = ({data}: any) => {
       {data.map((job: any)=>(
         <JobCard
           key={job._id}
-          jobId={job._id}
           jobTitle={job.jobTitle}
           company={job.company}
           companyLogo={job.companyLogo}
